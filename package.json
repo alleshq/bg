@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.19.2",
+    "env-paths": "^2.2.0",
     "wallpaper": "^4.4.1"
   }
 }

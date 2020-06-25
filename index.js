@@ -1,15 +1,17 @@
 const axios = require("axios");
 const wallpaper = require("wallpaper");
+const envPaths = require("env-paths");
+const imagePath = envPaths("allesbg", {suffix: ""}).data;
+const fs = require("fs");
 let url;
 
 const fetchWallpaper = () => axios.get("https://bg.alles.cx/url").then(res => {
     if (url === res.data) return;
     url = res.data;
-
     axios.get(url, {
         responseType: "arraybuffer"
     }).then(res => {
-        console.log(url);
+        fs.writeFileSync(imagePath, res.data);
     }).catch(() => {})
 }).catch(() => {});
 

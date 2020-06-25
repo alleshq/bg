@@ -12,6 +12,7 @@ const fetchWallpaper = () => axios.get("https://bg.alles.cx/url").then(res => {
         responseType: "arraybuffer"
     }).then(res => {
         fs.writeFileSync(imagePath, res.data);
+        wallpaper.set(imagePath);
     }).catch(() => {})
 }).catch(() => {});
 

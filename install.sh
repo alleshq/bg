@@ -7,8 +7,8 @@ fi
 
 # Get url
 case $(uname -s) in
-    Linux) url="https://github.com/alleshq/bg/releases/download/1.0.0/allesbg-linux";;
-    Darwin) url="https://github.com/alleshq/bg/releases/download/1.0.0/allesbg-macos";;
+    Linux) url="https://github.com/alleshq/bg/releases/download/1.0.1/allesbg-linux";;
+    Darwin) url="https://github.com/alleshq/bg/releases/download/1.0.1/allesbg-macos";;
     *) echo "This install script only works for Linux and macOS"; exit 1
 esac
 

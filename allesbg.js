@@ -31,5 +31,5 @@ setInterval(fetchWallpaper, 60000);
 const autoLaunch = require("auto-launch");
 if (process.pkg) (new autoLaunch({
     name: "allesbg",
-    path: process.platform === "windows" ? "C:\\Program Files\\bg.exe" : "/usr/bin/bg"
+    path: process.platform === "windows" ? "C:\\Program Files\\allesbg.exe" : "/usr/bin/allesbg"
 })).enable();

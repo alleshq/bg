@@ -1,8 +1,15 @@
 {
+  "name": "allesbg",
+  "scripts": {
+    "build": "pkg index.js -t latest-linux-x64,latest-windows-x64,latest-macos-x64 -o build/allesbg"
+  },
   "dependencies": {
     "auto-launch": "^5.0.5",
     "axios": "^0.19.2",
     "env-paths": "^2.2.0",
     "wallpaper": "^4.4.1"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.8"
   }
 }

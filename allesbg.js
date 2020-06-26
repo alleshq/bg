@@ -5,6 +5,11 @@ const imagePath = envPaths("allesbg", {suffix: ""}).data;
 const fs = require("fs");
 let url;
 
+if (!["win32", "linux", "darwin"].includes(process.platform)) {
+    console.log("Not supported on this platform");
+    process.exit(1);
+}
+
 const fetchWallpaper = () => axios.get("https://bg.alles.cx/url").then(res => {
     if (url === res.data) return;
     url = res.data;
@@ -23,5 +28,5 @@ setInterval(fetchWallpaper, 60000);
 const autoLaunch = require("auto-launch");
 if (process.pkg) (new autoLaunch({
     name: "allesbg",
-    path: process.pkg.entrypoint
+    path: process.platform === "windows" ? "C:\\Program Files\\bg.exe" : "/usr/bin/bg"
 })).enable();

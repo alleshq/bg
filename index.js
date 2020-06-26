@@ -18,3 +18,9 @@ const fetchWallpaper = () => axios.get("https://bg.alles.cx/url").then(res => {
 
 fetchWallpaper();
 setInterval(fetchWallpaper, 60000);
+
+const autoLaunch = require("auto-launch");
+if (process.pkg) (new autoLaunch({
+    name: "allesbg",
+    path: process.pkg.entrypoint
+})).enable();

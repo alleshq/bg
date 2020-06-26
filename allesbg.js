@@ -9,7 +9,8 @@ const fetchWallpaper = () => axios.get("https://bg.alles.cx/url").then(res => {
     if (url === res.data) return;
     url = res.data;
     axios.get(url, {
-        responseType: "arraybuffer"
+        responseType: "arraybuffer",
+        timeout: 30000
     }).then(res => {
         fs.writeFileSync(imagePath, res.data);
         wallpaper.set(imagePath);

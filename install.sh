@@ -1,5 +1,5 @@
 # Check architecture
-if [ $(uname -i) != "x86_64" ]
+if [ $(uname -m) != "x86_64" ]
 then
     echo "Sorry, bg is currently only supported on x64 systems."
     exit 1
